@@ -12,7 +12,7 @@ $token = $authResult.AccessToken
 # Parámetros del informe
 $groupId = "me"
 $reportName = "to-do-devops"
-$filePath = "./reports/o-do-DevOps.pbix"
+$filePath = "/reports/to-do-DevOps.pbix"
 
 # Subir el informe
 $publishUrl = "https://api.powerbi.com/v1.0/myorg/groups/$groupId/imports?datasetDisplayName=$reportName"
