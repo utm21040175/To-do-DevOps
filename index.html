@@ -5,64 +5,56 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>To do list</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="src/addTask.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('addImportantTaskButton').addEventListener('click', function() {
+                const taskInput = document.getElementById('importantTaskInput');
+                const taskList = document.getElementById('importantTaskList');
+
+                if (taskInput.value.trim() !== '') {
+                    const newTask = taskInput.value;
+                    const listItem = document.createElement('li');
+                    listItem.textContent = newTask;
+                    taskList.appendChild(listItem);
+                    taskInput.value = '';
+                }
+            });
+
+            document.getElementById('addUrgentTaskButton').addEventListener('click', function() {
+                const taskInput = document.getElementById('urgentTaskInput');
+                const taskList = document.getElementById('urgentTaskList');
+
+                if (taskInput.value.trim() !== '') {
+                    const newTask = taskInput.value;
+                    const listItem = document.createElement('li');
+                    listItem.textContent = newTask;
+                    taskList.appendChild(listItem);
+                    taskInput.value = '';
+                }
+            });
+        });
+    </script>
 </head>
 <body>
     <header class="titulo">CREA UNA LISTA DE LAS COSAS POR HACER</header>
     <div class="main-container">
         <div class="top-container">
-            <div class="container importante">
+            <div class="container importante" id="importante">
                 <h1>IMPORTANTE</h1>
-                <form>
-                    <input type="text" placeholder="Escribe tu pendiente">
-                    <input type="checkbox">
+                <form class="task-form">
+                    <input type="text" id="importantTaskInput" placeholder="Escribe tu pendiente" class="task-input">
+                    <button type="button" id="addImportantTaskButton">Agregar Tarea</button>
                 </form>
-                <form>
-                    <input type="text" placeholder="Escribe tu pendiente">
-                    <input type="checkbox">
-                </form>
-                <form>
-                    <input type="text" placeholder="Escribe tu pendiente">
-                    <input type="checkbox">
-                </form>
-                <form>
-                    <input type="text" placeholder="Escribe tu pendiente">
-                    <input type="checkbox">
-                </form>
-                <form>
-                    <input type="text" placeholder="Escribe tu pendiente">
-                    <input type="checkbox">
-                </form>
-                <form>
-                    <input type="text" placeholder="Escribe tu pendiente">
-                    <input type="checkbox">
-                </form>
+                <ul id="importantTaskList"></ul>
             </div>
-            <div class="container urgente">
+            <div class="container urgente" id="urgente">
                 <h1>URGENTE</h1>
-                <form>
-                    <input type="text" placeholder="Escribe tu pendiente">
-                    <input type="checkbox">
+                <form class="task-form">
+                    <input type="text" id="urgentTaskInput" placeholder="Escribe tu pendiente" class="task-input">
+                    <button type="button" id="addUrgentTaskButton">Agregar Tarea</button>
                 </form>
-                <form>
-                    <input type="text" placeholder="Escribe tu pendiente">
-                    <input type="checkbox">
-                </form>
-                <form>
-                    <input type="text" placeholder="Escribe tu pendiente">
-                    <input type="checkbox">
-                </form>
-                <form>
-                    <input type="text" placeholder="Escribe tu pendiente">
-                    <input type="checkbox">
-                </form>
-                <form>
-                    <input type="text" placeholder="Escribe tu pendiente">
-                    <input type="checkbox">
-                </form>
-                <form>
-                    <input type="text" placeholder="Escribe tu pendiente">
-                    <input type="checkbox">
-                </form>
+                <ul id="urgentTaskList"></ul>
             </div>
         </div>
     </div>
