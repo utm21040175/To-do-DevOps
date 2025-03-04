@@ -19,4 +19,4 @@ jobs:
         dotnet-version: '5.0.x'
 
     - name: Run PowerShell script
-      run: pwsh ./scripts/powershell/publish-report.ps1
+      run: pwsh ./scripts/powershell
