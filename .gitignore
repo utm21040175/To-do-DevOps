@@ -4,3 +4,7 @@ dist/
 
 # Build artifacts
 bundle.js
+
+#Cypress
+cypress/
+cypress.config.js
